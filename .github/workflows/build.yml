@@ -25,9 +25,14 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install scikit-decide and test dependencies
+      - name: Install graph-jsp-env
         run: |
           pip install graph-jsp-env
-      - name: test importing it
+      - name: test importing it with powershell
+        shell: pwsh
+        run: |
+          python -c "from graph_jsp_env.disjunctive_graph_jsp_env import DisjunctiveGraphJspEnv"
+      - name: test importing it with bash
+        shell: bash
         run: |
           python -c "from graph_jsp_env.disjunctive_graph_jsp_env import DisjunctiveGraphJspEnv"
