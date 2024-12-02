@@ -28,6 +28,10 @@ jobs:
       - name: Install graph-jsp-env
         run: |
           pip install graph-jsp-env
+      - name: install win-unicode-console for the banners
+        run: |
+          pip install win-unicode-console
+
       - name: test importing it with powershell
         shell: pwsh
         run: |
